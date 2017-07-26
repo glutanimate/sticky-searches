@@ -59,9 +59,11 @@ Some of the features in this add-on where inspired by the following fantastic ad
 - "Limit searches to current deck" by [Damien Elmes](https://github.com/dae/ankiplugins/blob/master/searchdeck.py)
 - "Ignore accents in browser search" by [Houssam Salem](https://github.com/hssm/anki-addons)
 
-'Sticky Searches' was originally known as 'Browser Search Modifiers', but has since been reworked from the ground up with the kind support of a fellow Anki user.
+I would also like to thank [Dmitry Mikheev](https://github.com/ankitest) for his significant contributions to the codebase of the original add-on.
 
-If you enjoyed this add-on and would like to hire my services to work on an add-on of your own, please feel free to reach out to me through <em>ankiglutanimate [αt] gmail . com</em>
+The icons used by this add-on were adapted from previous work by [Tiago Barroso](https://github.com/tmbb/FrozenFields) and [Damien Elmes](https://github.com/dae/anki).
+
+'Sticky Searches' was formerly known as 'Browser Search Modifiers', but has since been reworked from the ground up with the kind support of a fellow Anki user. If you enjoyed this add-on and would like to hire my services to work on an add-on of your own, please feel free to reach out to me through <em>ankiglutanimate [αt] gmail . com</em>
 
 *Sticky Searches* is *Copyright © 2017 [Aristotelis P.](https://glutanimate.com/)*
 
