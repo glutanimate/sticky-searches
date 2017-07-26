@@ -295,7 +295,6 @@ def onSearch(self, _old=None, reset=True):
 
 def onCbStateChanged(self, state, key):
     """Update persistent search tokens and search bar"""
-
     if state == Qt.Checked:
         mode = "add"
     else:
@@ -307,7 +306,7 @@ def onCbStateChanged(self, state, key):
     sticky = self.cbPrefs["last"].get("sticky", "")
     
     if query not in empty_queries or (EMPTY_CLEAR and query != ""):
-        query_tokens = tokenize(query)
+        query_tokens = tokenize(query.replace(sticky, ""))
     else:
         query_tokens = []
     uniq_tokens = list(set(query_tokens) - set(cb_tokens))
@@ -359,13 +358,13 @@ def onCbStateChanged(self, state, key):
         self.form.searchEdit.lineEdit().setText(sticky + " " + query)
         self.cbPrefs["last"]["sticky"] = sticky
 
-    # Save checkbox state and reset
-    self.cbPrefs["state"][key] = state
-    self.onReset()
-
-    # DEBUG
+    # # DEBUG
     # print("{} is {}. New tokens:[{}]. New sticky: {}".format(
     #     key, state, ", ".join(cb_tokens), sticky))
+
+    # Save checkbox state and reset
+    self.cbPrefs["state"][key] = state
+    self.onSearch()
 
 
 def onSetupSearch(self):
