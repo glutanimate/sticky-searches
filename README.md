@@ -54,12 +54,12 @@ Advanced users can customize these toggles and set up additional ones by modifyi
 
 ### License and Credits
 
-Some of the features in this add-on where inspired by the following fantastic add-ons:
+Some of the features in this add-on were inspired by the following fantastic add-ons:
 
 - "Limit searches to current deck" by [Damien Elmes](https://github.com/dae/ankiplugins/blob/master/searchdeck.py)
 - "Ignore accents in browser search" by [Houssam Salem](https://github.com/hssm/anki-addons)
 
-I would also like to thank [Dmitry Mikheev](https://github.com/ankitest) for his significant contributions to the codebase of the original add-on.
+I would also like to thank [Dmitry Mikheev](https://github.com/ankitest) for his significant contributions to the code-base of the original add-on.
 
 The icons used by this add-on were adapted from previous work by [Tiago Barroso](https://github.com/tmbb/FrozenFields) and [Damien Elmes](https://github.com/dae/anki).
 
