@@ -412,7 +412,9 @@ def onSetupSearch(self):
         icons = cb.get("icons", None)
         
         b = QCheckBox(label, widget)
-        b.setToolTip(tooltip)
+        if tooltip or hotkey:
+            cb_tt = "{} ({})".format(tooltip, hotkey)
+            b.setToolTip(cb_tt)
         b.setFocusPolicy(Qt.NoFocus)
         
         if icons:
