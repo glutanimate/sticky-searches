@@ -122,6 +122,7 @@ from aqt.qt import *
 
 from aqt import mw
 from aqt.browser import Browser
+from anki.utils import isWin
 from anki.hooks import wrap
 
 ##############  VARIABLES START  ##############
@@ -144,7 +145,14 @@ icon_path = os.path.join(mw.pm.addonFolder(), "sticky_searches", "icons")
 def image2url(name):
     path = os.path.join(icon_path, "{}.png".format(name))
     qurl = QUrl.fromLocalFile(path).toString()
-    return qurl.replace("file://", "")
+    # qss urls use a very strange mix between Windows path
+    # syntax and URL syntax
+    # TODO: find a way to use QRessource system instead
+    if isWin:
+        to_replace = "file:///"
+    else:
+        to_replace = "file://"
+    return qurl.replace(to_replace, "")
 
 iconsets = {
     "snowflake": (
@@ -175,28 +183,28 @@ QCheckBox::indicator {{
     height: 18px;
 }}
 QCheckBox::indicator:checked {{
-    image: url({0});
+    image: url("{0}");
 }}
 QCheckBox::indicator:unchecked {{
-    image: url({1});
+    image: url("{1}");
 }}
 QCheckBox::indicator:checked:hover {{
-    image: url({0});
+    image: url("{0}");
 }}
 QCheckBox::indicator:unchecked:hover {{
-    image: url({1});
+    image: url("{1}");
 }}
 QCheckBox::indicator:checked:pressed {{
-    image: url({0});
+    image: url("{0}");
 }}
 QCheckBox::indicator:unchecked:pressed {{
-    image: url({1});
+    image: url("{1}");
 }}
 QCheckBox::indicator:checked:disabled {{
-    image: url({0});
+    image: url("{0}");
 }}
 QCheckBox::indicator:unchecked:disabled {{
-    image: url({0});
+    image: url("{0}");
 }}
 """
 ##############  VARIABLES END  ##############
