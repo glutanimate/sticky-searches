@@ -36,8 +36,8 @@ This add-on was originally known as "Browser Search Modifiers", but has
 since been reworked from the ground up with the kind support of a
 fellow Anki user.
 
-Copyright: Glutanimate 2016-2017 <https://glutanimate.com/>
-License: GNU AGPL, version 3 or later; https://www.gnu.org/licenses/agpl-3.0.en.html
+Copyright: (c) Glutanimate 2016-2017 <https://glutanimate.com/>
+License: GNU AGPLv3 or later <https://www.gnu.org/licenses/agpl.html>
 """
 
 # Do not modify the following line
