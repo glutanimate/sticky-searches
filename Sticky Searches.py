@@ -122,7 +122,7 @@ from aqt.qt import *
 
 from aqt import mw
 from aqt.browser import Browser
-from anki.utils import isWin
+from anki.utils import isWin, isMac
 from anki.hooks import wrap
 
 ##############  VARIABLES START  ##############
@@ -207,6 +207,14 @@ QCheckBox::indicator:unchecked:disabled {{
     image: url("{0}");
 }}
 """
+
+cb_stylesheet_mac = """
+QCheckBox {
+    margin-left: 6px;
+    margin-right: 6px;
+}
+"""
+
 ##############  VARIABLES END  ##############
 
 
@@ -424,10 +432,14 @@ def onSetupSearch(self):
             cb_tt = "{} ({})".format(tooltip, hotkey)
             b.setToolTip(cb_tt)
         b.setFocusPolicy(Qt.NoFocus)
-        
-        if icons:
+
+        stylesheet = ""
+        if isMac: # fix margins on macOS
+            stylesheet += cb_stylesheet_mac
+        if icons: # apply custom icons
             iconset = iconsets[icons]
-            stylesheet = cb_stylesheet.format(*iconset)
+            stylesheet += cb_stylesheet.format(*iconset)
+        if stylesheet:
             b.setStyleSheet(stylesheet)
 
         b.setCheckState(state)
